@@ -186,6 +186,16 @@ end
 })
 
 Tab:AddButton({
+	Name = "Siren Sound",
+	Callback = function()
+workspace.resources.RemoteEvent:FireServer("FireAllClients", "updateAlarmLight", {
+    Active = {Value = true},
+    glass = game.Players.LocalPlayer.Character.Head,
+})
+end
+})
+
+Tab:AddButton({
 	Name = "Bridge Tool",
 	Callback = function() loadstring(game:HttpGet(('https://pastebin.com/raw/bLsmSvd0'),true))()
 end
